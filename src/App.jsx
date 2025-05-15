@@ -1,19 +1,26 @@
 import useQuery from "./useQuery";
 
-import manyGuests from "/.manyGuests"
+import ManyGuests from "./components/manyGuests"
 
 
 export default function App() {
-   const { data: events, loading, error } = useQuery("/events");
+
+  <h1>Guests</h1>
+   const { data: guests, loading, error } = useQuery("/guests");
 
    if (loading) return <p>Loading...</p>;
-  if (error || !events) return <p>{error}</p>;
+  if (error || !guests) return <p>{error}</p>;
 
-
+console.log (guests)
   return (
   <>
+  <ManyGuests guests={guests} />
   
-  <h1>Events</h1>
+
+
+export default guestList;
+
+  
   
   </>
   );

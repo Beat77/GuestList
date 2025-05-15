@@ -1,10 +1,10 @@
-import singleGuest from "./singleGuest";
+import SingleGuest from "./singleGuest";
 
-export default function manyGuests({guests}) {
+export default function ManyGuests({guests}) {
   return (
     <article className="guests">
-      {guests.map((guest) => (
-        <singleGuest key={guest.id} guest={guest} />
+      {guests && guests.map((guest) => (
+        <SingleGuest key={guest.id} guest={guest} />
       ))}
     </article>
   );
